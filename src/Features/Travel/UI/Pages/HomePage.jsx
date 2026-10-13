@@ -141,7 +141,7 @@ const HomePage = () => {
           </div>
 
           <a
-            href="#categories"
+             onClick={()=>navigate("/main/events")}
             className="flex items-center gap-2 text-sm text-amber-400"
           >
             View All <ArrowRight size={17} />
@@ -175,7 +175,8 @@ const HomePage = () => {
                   {featured?.date}
                 </p>
 
-                <button className="flex items-center gap-2 rounded-full border border-amber-400/40 px-5 py-2.5 text-sm text-amber-400 transition hover:bg-amber-400 hover:text-black">
+                <button onClick={()=>navigate("/main/explore")}
+                 className="flex items-center gap-2 rounded-full border border-amber-400/40 px-5 py-2.5 text-sm text-amber-400 transition hover:bg-amber-400 hover:text-black">
                   Explore Image <ArrowRight size={16} />
                 </button>
               </div>
