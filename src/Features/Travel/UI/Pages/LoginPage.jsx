@@ -73,7 +73,7 @@ const LoginPage = () => {
             {/* Email */}
             <div className="mb-5">
               <label className="mb-2 block text-sm text-gray-300">
-                Email Address
+                Username
               </label>
 
               <div className="relative">
@@ -83,18 +83,15 @@ const LoginPage = () => {
                 />
 
                 <input
-                  type="email"
-                  placeholder="Enter your email"
-                  {...register("email", {
-                    required: "Email is required",
-
-                    message: "Please enter a valid email address",
-                  })}
+                  placeholder="Enter your name"
+                   {...register("username", {
+                  required: "Name is required",
+                })}
                   className="h-12 w-full rounded-xl border border-white/10 bg-[#050a12] pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/10"
                 />
               </div>
 
-              {errors.email && (
+              {errors.username && (
                 <p className="mt-2 text-xs text-red-400">
                   {errors.email.message}
                 </p>

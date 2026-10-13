@@ -79,7 +79,7 @@ const RegisterPage = () => {
               <input
                 type="text"
                 placeholder="Enter your name"
-                {...register("name", {
+                {...register("username", {
                   required: "Name is required",
                 })}
                 className="w-full bg-transparent text-sm text-white outline-none placeholder:text-gray-600"
@@ -115,7 +115,7 @@ const RegisterPage = () => {
                 {errors.email.message}
               </p>
             )}
-          </div>
+          </div>c
 
           {/* Password */}
           <div>

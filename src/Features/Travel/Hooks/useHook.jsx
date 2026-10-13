@@ -11,14 +11,14 @@ export const useHook = () => {
     queryFn: getfeatured,
   });
 
-  console.log("Featured data:", featuredata);
+
   const { data: newEventData = [] } = useQuery({
     queryKey: ["event", search],
     queryFn: () => eventData(search),
     enabled: !!search.trim(),
   });
 
-  console.log("new", newEventData);
+  
 
   return {
     featuredata,

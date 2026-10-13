@@ -10,6 +10,8 @@ import LoginPage from "../Features/Travel/UI/Pages/LoginPage";
 import RegisterPage from "../Features/Travel/UI/Pages/RegisterPage";
 import { currentEmployee } from "../Features/Auth/State/AuthAction";
 import { useDispatch } from "react-redux";
+import PublicRoute from "./ProtectedRoute.jsx/PublicRoute";
+import ProtectedRoute from "./ProtectedRoute.jsx/ProtectedRoute";
 const AppRoute = () => {
   let dispatch = useDispatch();
   useEffect(() => {
@@ -19,7 +21,11 @@ const AppRoute = () => {
   }, []);
 
   const router = createBrowserRouter([
-    {
+{
+  path:"/",
+  element:<PublicRoute/>,
+  children:[
+        {
       path: "/",
       element: <AuthLayout />,
       children: [
@@ -33,8 +39,16 @@ const AppRoute = () => {
         },
       ],
     },
+  ]
 
-    {
+  
+},
+
+ {
+  path:"",
+  element:<ProtectedRoute/>,
+  children:[
+       {
       path: "main",
       element: <MainLayout />,
       children: [
@@ -56,6 +70,8 @@ const AppRoute = () => {
         },
       ],
     },
+  ]
+ }
   ]);
   return <RouterProvider router={router}></RouterProvider>;
 };

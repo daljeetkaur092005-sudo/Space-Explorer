@@ -13,7 +13,8 @@ const AuthSlice = createSlice({
       isLoading = false;
     },
     removeEmployee: (state, action) => {
-      ((state.employee = null), (isLoading = true));
+      state.employee = null,
+      isLoading = true
     },
   },
 
