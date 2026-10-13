@@ -18,7 +18,7 @@ const Navbar = () => {
       {/* Navigation Links */}
       <div className="hidden items-center gap-8 md:flex">
         <NavLink
-          to={"/"}
+          to={"/main"}
           end
           className={({ isActive }) =>
             `transition ${
@@ -32,7 +32,7 @@ const Navbar = () => {
         </NavLink>
 
         <NavLink
-          to={"/explore"}
+          to={"/main/explore"}
           className={({ isActive }) =>
             `transition ${
               isActive
@@ -45,7 +45,7 @@ const Navbar = () => {
         </NavLink>
 
         <NavLink
-          to={"/events"}
+          to={"/main/events"}
           className={({ isActive }) =>
             `transition ${
               isActive
@@ -58,7 +58,7 @@ const Navbar = () => {
         </NavLink>
 
         <NavLink
-          to={"/detail"}
+          to={"/main/detail"}
           className={({ isActive }) =>
             `transition ${
               isActive
