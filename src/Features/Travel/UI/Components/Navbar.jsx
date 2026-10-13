@@ -8,12 +8,11 @@ const Navbar = () => {
     <nav className="flex items-center justify-between border-b border-white/10 bg-[#050a12] px-6 py-5 text-white md:px-16">
       {/* Logo */}
 
-        <Orbit size={27} className="text-amber-400" />
+      <Orbit size={27} className="text-amber-400" />
 
-        <h1 className="text-xl font-bold md:text-2xl">
-          Space <span className="text-amber-400">Explorer</span>
-        </h1>
-    
+      <h1 className="text-xl font-bold md:text-2xl">
+        Space <span className="text-amber-400">Explorer</span>
+      </h1>
 
       {/* Navigation Links */}
       <div className="hidden items-center gap-8 md:flex">
@@ -35,9 +34,7 @@ const Navbar = () => {
           to={"/main/explore"}
           className={({ isActive }) =>
             `transition ${
-              isActive
-                ? "text-amber-400"
-                : "text-gray-300 hover:text-amber-400"
+              isActive ? "text-amber-400" : "text-gray-300 hover:text-amber-400"
             }`
           }
         >
@@ -48,9 +45,7 @@ const Navbar = () => {
           to={"/main/events"}
           className={({ isActive }) =>
             `transition ${
-              isActive
-                ? "text-amber-400"
-                : "text-gray-300 hover:text-amber-400"
+              isActive ? "text-amber-400" : "text-gray-300 hover:text-amber-400"
             }`
           }
         >
@@ -61,9 +56,7 @@ const Navbar = () => {
           to={"/main/detail"}
           className={({ isActive }) =>
             `transition ${
-              isActive
-                ? "text-amber-400"
-                : "text-gray-300 hover:text-amber-400"
+              isActive ? "text-amber-400" : "text-gray-300 hover:text-amber-400"
             }`
           }
         >

@@ -1,23 +1,21 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-import {
-  Orbit,
-  Mail,
-  LockKeyhole,
-  ArrowRight,
-  Sparkles,
-} from "lucide-react";
+import { Orbit, Mail, LockKeyhole, ArrowRight, Sparkles } from "lucide-react";
 import { useHook } from "../../Hooks/useHook";
 import { useAuth } from "../../../Auth/Hooks/useAuth";
 
 const LoginPage = () => {
- const {register,handleSubmit,formState:{ errors},loginSubmit}=useAuth()
-const {navigate}=useHook()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    loginSubmit,
+  } = useAuth();
+  const { navigate } = useHook();
 
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050a12] px-4 py-10 text-white">
-
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_15%_20%,rgba(79,70,229,0.14),transparent_40%),radial-gradient(ellipse_at_90%_85%,rgba(147,51,234,0.10),transparent_35%)]" />
 
@@ -33,7 +31,6 @@ const {navigate}=useHook()
 
       {/* Login UI */}
       <div className="relative z-10 w-full max-w-md">
-
         {/* Logo */}
         <div className="mb-6 flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-amber-400/25 bg-amber-400/10 text-amber-400">
@@ -52,7 +49,6 @@ const {navigate}=useHook()
 
         {/* Card */}
         <div className="rounded-2xl border border-white/10 bg-[#080e18]/95 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-9">
-
           {/* Heading */}
           <div className="mb-8 text-center">
             <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-amber-400/20 bg-amber-400/10 text-amber-400">
@@ -74,7 +70,6 @@ const {navigate}=useHook()
 
           {/* Form */}
           <form onSubmit={handleSubmit(loginSubmit)} noValidate>
-
             {/* Email */}
             <div className="mb-5">
               <label className="mb-2 block text-sm text-gray-300">
@@ -92,9 +87,8 @@ const {navigate}=useHook()
                   placeholder="Enter your email"
                   {...register("email", {
                     required: "Email is required",
-              
-                      message: "Please enter a valid email address",
-                    
+
+                    message: "Please enter a valid email address",
                   })}
                   className="h-12 w-full rounded-xl border border-white/10 bg-[#050a12] pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/10"
                 />
@@ -124,7 +118,6 @@ const {navigate}=useHook()
                   placeholder="Enter your password"
                   {...register("password", {
                     required: "Password is required",
-                    
                   })}
                   className="h-12 w-full rounded-xl border border-white/10 bg-[#050a12] pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/10"
                 />
@@ -140,10 +133,7 @@ const {navigate}=useHook()
             {/* Options */}
             <div className="mb-6 flex items-center justify-between gap-3 text-xs">
               <label className="flex items-center gap-2 text-gray-400">
-                <input
-                  type="checkbox"
-                  className="h-4 w-4 accent-amber-400"
-                />
+                <input type="checkbox" className="h-4 w-4 accent-amber-400" />
                 Remember me
               </label>
 
@@ -158,11 +148,9 @@ const {navigate}=useHook()
             {/* Submit Button */}
             <button
               type="submit"
-              onClick={()=>navigate("/main")}
+              onClick={() => navigate("/main")}
               className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 font-semibold text-white shadow-lg shadow-cyan-500/20 transition duration-300 hover:brightness-110 hover:shadow-blue-500/40 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
             >
-    
-
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"
@@ -182,7 +170,7 @@ const {navigate}=useHook()
           <p className="text-center text-sm text-gray-400">
             New explorer?{" "}
             <a
-              onClick={()=>navigate("/register")}
+              onClick={() => navigate("/register")}
               className="font-medium text-amber-400 hover:text-amber-300"
             >
               Create an account

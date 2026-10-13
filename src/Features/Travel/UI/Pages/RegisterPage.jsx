@@ -9,15 +9,16 @@ import {
 import { useAuth } from "../../../Auth/Hooks/useAuth";
 import { useHook } from "../../Hooks/useHook";
 
-
-
 const RegisterPage = () => {
-
-const {register,handleSubmit,formState:{ errors},registerSubmit}=useAuth()
-const {navigate}=useHook()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    registerSubmit,
+  } = useAuth();
+  const { navigate } = useHook();
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050a12] px-4 py-10 text-white">
-
       {/* Background Glow */}
       <div className="absolute -left-32 top-10 h-80 w-80 rounded-full bg-blue-600/15 blur-[120px]" />
       <div className="absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-violet-600/15 blur-[120px]" />
@@ -30,7 +31,6 @@ const {navigate}=useHook()
 
       {/* Register Card */}
       <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-[#080e18]/90 p-7 shadow-2xl shadow-blue-950/30 backdrop-blur-xl sm:p-9">
-
         {/* Logo */}
         <div className="mb-8 flex items-center justify-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10">
@@ -54,9 +54,7 @@ const {navigate}=useHook()
             YOUR JOURNEY STARTS HERE
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight">
-            Create Account
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight">Create Account</h2>
 
           <p className="mt-2 text-sm text-gray-400">
             Join the mission and explore the universe.
@@ -69,7 +67,6 @@ const {navigate}=useHook()
           noValidate
           className="space-y-5"
         >
-
           {/* Name */}
           <div>
             <label className="mb-2 block text-sm text-gray-300">
@@ -84,16 +81,13 @@ const {navigate}=useHook()
                 placeholder="Enter your name"
                 {...register("name", {
                   required: "Name is required",
-              
                 })}
                 className="w-full bg-transparent text-sm text-white outline-none placeholder:text-gray-600"
               />
             </div>
 
             {errors.name && (
-              <p className="mt-2 text-xs text-red-400">
-                {errors.name.message}
-              </p>
+              <p className="mt-2 text-xs text-red-400">{errors.name.message}</p>
             )}
           </div>
 
@@ -111,7 +105,6 @@ const {navigate}=useHook()
                 placeholder="you@example.com"
                 {...register("email", {
                   required: "Email is required",
-              
                 })}
                 className="w-full bg-transparent text-sm text-white outline-none placeholder:text-gray-600"
               />
@@ -126,9 +119,7 @@ const {navigate}=useHook()
 
           {/* Password */}
           <div>
-            <label className="mb-2 block text-sm text-gray-300">
-              Password
-            </label>
+            <label className="mb-2 block text-sm text-gray-300">Password</label>
 
             <div className="flex h-12 items-center gap-3 rounded-xl border border-white/10 bg-[#050a12] px-4 transition focus-within:border-cyan-400/60">
               <LockKeyhole size={18} className="text-gray-500" />
@@ -138,7 +129,6 @@ const {navigate}=useHook()
                 placeholder="Create a password"
                 {...register("password", {
                   required: "Password is required",
-                 
                 })}
                 className="w-full bg-transparent text-sm text-white outline-none placeholder:text-gray-600"
               />
@@ -165,7 +155,6 @@ const {navigate}=useHook()
                 placeholder="Confirm your password"
                 {...register("confirmPassword", {
                   required: "Please confirm your password",
-                  
                 })}
                 className="w-full bg-transparent text-sm text-white outline-none placeholder:text-gray-600"
               />
@@ -178,18 +167,11 @@ const {navigate}=useHook()
             )}
           </div>
 
-        
-
-
-
           {/* Button */}
           <button
             type="submit"
-      
             className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 font-semibold text-white shadow-lg shadow-cyan-500/20 transition duration-300 hover:brightness-110 hover:shadow-blue-500/40 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
           >
-      
-
             <ArrowRight
               size={18}
               className="transition-transform group-hover:translate-x-1"
@@ -200,8 +182,10 @@ const {navigate}=useHook()
         {/* Login Link */}
         <p className="mt-7 text-center text-sm text-gray-400">
           Already have an account?{" "}
-          <span onClick={()=>navigate("/")}
-          className="cursor-pointer font-medium text-cyan-300 transition hover:text-white">
+          <span
+            onClick={() => navigate("/")}
+            className="cursor-pointer font-medium text-cyan-300 transition hover:text-white"
+          >
             Sign in
           </span>
         </p>

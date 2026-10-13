@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import {
@@ -15,7 +15,6 @@ import {
   Grid2X2,
 } from "lucide-react";
 import { useHook } from "../../Hooks/useHook";
-
 
 const categories = [
   {
@@ -57,14 +56,14 @@ const categories = [
 ];
 
 const HomePage = () => {
-    const {navigate, featuredata}=useHook()
+  const { navigate, featuredata } = useHook();
 
-const [showSearch,setShowSearch]=useState("")
-console.log(showSearch)
-     const searching=categories?.filter((val)=>{
-        return  val.name.toLowerCase().includes(showSearch.toLowerCase())
-     })
-     const featured =featuredata?.[0]
+  const [showSearch, setShowSearch] = useState("");
+  console.log(showSearch);
+  const searching = categories?.filter((val) => {
+    return val.name.toLowerCase().includes(showSearch.toLowerCase());
+  });
+  const featured = featuredata?.[0];
   return (
     <main className="min-h-screen bg-[#050a12] text-white">
       {/* Hero */}
@@ -101,8 +100,8 @@ console.log(showSearch)
             <Search size={20} className="shrink-0 text-amber-400" />
 
             <input
-            value={showSearch}
-            onChange={(e)=>setShowSearch(e.target.value)}
+              value={showSearch}
+              onChange={(e) => setShowSearch(e.target.value)}
               type="text"
               placeholder="Search planets, galaxies, stars..."
               className="min-w-0 flex-1 bg-transparent py-3 text-sm outline-none placeholder:text-gray-400"
@@ -150,17 +149,17 @@ console.log(showSearch)
           </a>
         </div>
 
-        { featuredata && (
+        {featuredata && (
           <div className="overflow-hidden rounded-2xl border border-amber-400/20 bg-[#080e18] md:flex">
             <img
-              src={  featured?.hdurl || featured.url}
+              src={featured?.hdurl || featured.url}
               alt="Nebula in deep space"
               className="h-60 w-full object-cover md:h-auto md:w-[42%]"
             />
 
             <div className="flex flex-1 flex-col justify-center p-6 md:p-9">
               <span className="w-fit rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1.5 text-xs text-amber-300">
-                { featured?.title}
+                {featured?.title}
               </span>
 
               <h3 className="mt-5 text-2xl font-bold md:text-3xl">
@@ -168,13 +167,13 @@ console.log(showSearch)
               </h3>
 
               <p className="mt-3 max-w-lg text-sm leading-7 text-gray-400">
-                { featured?.alt}
+                {featured?.alt}
               </p>
 
               <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
                 <p className="flex items-center gap-2 text-sm text-gray-400">
                   <CalendarDays size={17} className="text-amber-400" />
-                  { featured?.date}
+                  {featured?.date}
                 </p>
 
                 <button className="flex items-center gap-2 rounded-full border border-amber-400/40 px-5 py-2.5 text-sm text-amber-400 transition hover:bg-amber-400 hover:text-black">
@@ -242,7 +241,11 @@ console.log(showSearch)
                     <Icon size={18} className="shrink-0 text-amber-400" />
                     <h3 className="text-sm font-semibold">{category.name}</h3>
                     <ArrowRight
-                      onClick={()=>navigate(`/main/explore?category=${category.name.toLowerCase()}`)}
+                      onClick={() =>
+                        navigate(
+                          `/main/explore?category=${category.name.toLowerCase()}`,
+                        )
+                      }
                       size={15}
                       className="ml-auto text-gray-500 group-hover:text-amber-400"
                     />

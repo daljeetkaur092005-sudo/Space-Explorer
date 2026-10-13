@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
-import {createBrowserRouter,RouterProvider} from "react-router"
-import MainLayout from '../Layout/MainLayout'
-import HomePage from '../Features/Travel/UI/Pages/HomePage'
-import ExplorePage from '../Features/Travel/UI/Pages/ExplorePage'
-import EventsPage from '../Features/Travel/UI/Pages/EventsPage'
-import DetailPage from '../Features/Travel/UI/Pages/DetailPage'
-import AuthLayout from '../Layout/AuthLayout'
-import LoginPage from '../Features/Travel/UI/Pages/LoginPage'
-import RegisterPage from '../Features/Travel/UI/Pages/RegisterPage'
-import { currentEmployee } from '../Features/Auth/State/AuthAction'
+import React, { useEffect } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import MainLayout from "../Layout/MainLayout";
+import HomePage from "../Features/Travel/UI/Pages/HomePage";
+import ExplorePage from "../Features/Travel/UI/Pages/ExplorePage";
+import EventsPage from "../Features/Travel/UI/Pages/EventsPage";
+import DetailPage from "../Features/Travel/UI/Pages/DetailPage";
+import AuthLayout from "../Layout/AuthLayout";
+import LoginPage from "../Features/Travel/UI/Pages/LoginPage";
+import RegisterPage from "../Features/Travel/UI/Pages/RegisterPage";
+import { currentEmployee } from "../Features/Auth/State/AuthAction";
 import { useDispatch } from "react-redux";
 const AppRoute = () => {
   let dispatch = useDispatch();
@@ -18,69 +18,46 @@ const AppRoute = () => {
     })();
   }, []);
 
-
-
-
-
-
-
-    const router=createBrowserRouter([
-{
-  path:"/",
-  element:<AuthLayout/>,
-  children:[
+  const router = createBrowserRouter([
     {
-      path:"",
-      element:<LoginPage/>
+      path: "/",
+      element: <AuthLayout />,
+      children: [
+        {
+          path: "",
+          element: <LoginPage />,
+        },
+        {
+          path: "register",
+          element: <RegisterPage />,
+        },
+      ],
     },
-      {
-      path:"register",
-      element:<RegisterPage/>
-    }
-  ]
-},
 
+    {
+      path: "main",
+      element: <MainLayout />,
+      children: [
+        {
+          path: "",
+          element: <HomePage />,
+        },
+        {
+          path: "explore",
+          element: <ExplorePage />,
+        },
+        {
+          path: "events",
+          element: <EventsPage />,
+        },
+        {
+          path: "detail",
+          element: <DetailPage />,
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router}></RouterProvider>;
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            {
-                path:"main",
-                element:<MainLayout/>,
-                children:[
-                    {
-                        path:"",
-                        element:<HomePage/>
-                    },
-                      {
-                        path:"explore",
-                        element:<ExplorePage/>
-                    },
-                      {
-                        path:"events",
-                        element:<EventsPage/>
-                    },
-                      {
-                        path:"detail",
-                        element:<DetailPage/>
-                    }
-                ]
-            }
-    ])
-  return <RouterProvider router={router}></RouterProvider>
-}
-
-export default AppRoute
+export default AppRoute;

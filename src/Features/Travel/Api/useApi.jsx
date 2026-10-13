@@ -1,22 +1,17 @@
-import axios from "axios"
+import axios from "axios";
 
+export const getfeatured = async () => {
+  const response = await axios.get(
+    "https://science.nasa.gov/wp-json/wp/v2/apod-basic/",
+  );
+  console.log(response.data);
+  return response.data;
+};
 
- export  const getfeatured = async () => {
-
-    const response = await axios.get(
-      "https://science.nasa.gov/wp-json/wp/v2/apod-basic/",
-    );
-    console.log(response.data);
-    return response.data;
-  };
-
-export  const eventData = async (search) => {
-
-    const response = await axios.get(
-      `https://images-api.nasa.gov/search?q=${search}&media_type=image`
-    )
-    console.log(response.data)
-    return response.data.collection.items.slice(0, 10)
-  }
-
-  
+export const eventData = async (search) => {
+  const response = await axios.get(
+    `https://images-api.nasa.gov/search?q=${search}&media_type=image`,
+  );
+  console.log(response.data);
+  return response.data.collection.items.slice(0, 10);
+};

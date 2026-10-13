@@ -4,7 +4,6 @@ const DetailPage = () => {
   return (
     <div className="min-h-screen bg-[#080910] px-5 py-10 text-white md:px-10 lg:px-14">
       <div className="mx-auto max-w-7xl">
-
         {/* Header */}
         <div className="mb-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#D4AF37]">
@@ -80,7 +79,6 @@ const DetailPage = () => {
         {/* Featured Information */}
         <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#11131D]">
           <div className="grid md:grid-cols-2">
-
             <div className="flex min-h-72 items-center justify-center bg-gradient-to-br from-[#17182B] via-[#10121D] to-[#080910] p-8">
               <div className="text-center">
                 <div className="text-7xl">🌠</div>
@@ -102,8 +100,8 @@ const DetailPage = () => {
               <p className="mt-5 text-sm leading-7 text-gray-400">
                 The observable universe is the part of the universe from which
                 light has had enough time to reach us since the universe began.
-                It contains an incredible variety of galaxies, stars, and
-                other cosmic objects.
+                It contains an incredible variety of galaxies, stars, and other
+                cosmic objects.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -116,7 +114,6 @@ const DetailPage = () => {
                 </span>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -125,7 +122,6 @@ const DetailPage = () => {
           <p>Every discovery brings us closer to understanding the cosmos.</p>
           <p>Space Explorer · Knowledge Hub</p>
         </div>
-
       </div>
     </div>
   );
