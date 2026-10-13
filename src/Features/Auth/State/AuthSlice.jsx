@@ -10,11 +10,11 @@ const AuthSlice = createSlice({
   reducers: {
     addEmployee: (state, action) => {
       state.employee = action.payload;
-      isLoading = false;
+      state.isLoading = false;
     },
     removeEmployee: (state, action) => {
-      state.employee = null,
-      isLoading = true
+      state.employee = null;
+      state.isLoading = true
     },
   },
 
