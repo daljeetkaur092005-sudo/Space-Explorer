@@ -66,11 +66,6 @@ const Navbar = () => {
 
       {/* Icons */}
       <div className="flex items-center gap-5 text-gray-300">
-        <Search
-          size={21}
-          className="cursor-pointer transition hover:text-amber-400"
-        />
-
         <Moon
           size={21}
           className="cursor-pointer transition hover:text-amber-400"
