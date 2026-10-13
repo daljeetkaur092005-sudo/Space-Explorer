@@ -59,7 +59,6 @@ const HomePage = () => {
   const { navigate, featuredata } = useHook();
 
   const [showSearch, setShowSearch] = useState("");
-  console.log(showSearch);
   const searching = categories?.filter((val) => {
     return val.name.toLowerCase().includes(showSearch.toLowerCase());
   });
